@@ -2,7 +2,7 @@
   "name": "dart-sass-rails",
   "version": "0.2.0",
   "main": "index.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist"
   ],
