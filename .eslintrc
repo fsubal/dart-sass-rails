@@ -22,7 +22,6 @@
     "@typescript-eslint/no-unused-vars": [
       2,
       {
-        // _ で始まる未使用の引数は許す
         "argsIgnorePattern": "^_"
       }
     ]
