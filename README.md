@@ -33,4 +33,4 @@ import dartSassRails from 'dart-sass-rails';
 
 ### Inspired by
 
-This library is highly influenced by [node-sass-asset-functions](https://github.com/fetch/node-sass-asset-functions).
+This library is highly influenced by [node-sass-asset-functions](https://github.com/fetch/node-sass-asset-functions). If you are using node-sass, use that instead.
