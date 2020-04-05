@@ -22,7 +22,7 @@
       "^.+\\.ts$": "ts-jest"
     },
     "testMatch": [
-      "<rootDir>/**/__tests__/**/*.spec.{ts,tsx}"
+      "<rootDir>/**/specs/**/*.spec.{ts,tsx}"
     ],
     "moduleFileExtensions": [
       "ts"
