@@ -6,9 +6,15 @@
   "files": [
     "dist"
   ],
+  "author": "fsubal <fsubal1102@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/fsubal/dart-sass-rails"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublishOnly": "bili"
   },
   "jest": {
     "rootDir": "./src",
@@ -22,8 +28,6 @@
       "ts"
     ]
   },
-  "author": "fsubal <fsubal1102@gmail.com>",
-  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^25.2.1",
     "@types/sass": "^1.16.0",
