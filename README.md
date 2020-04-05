@@ -15,22 +15,41 @@ import sass from 'sass';
 import dartSassRails from 'dart-sass-rails';
 
 {
-    loader: 'sass-loader',
-    options: {
-        sourceMap: true,
-        implementation: sass,
-        sassOptions: {
-            functions: dartSassRails({
-                assetRootPath: path.join(railsRoot, 'app', 'assets'),
-                imagesPath: '/images',
-                fontsPath: '/fonts',
-            }),
-            includePaths: [path.join(railsRoot, 'app', 'assets', 'stylesheets')],
+    test: /\.(scss|sass|css)$/i,
+    use: [
+        MiniCssExtractPlugin.loader,
+        {
+            loader: "css-loader",
+            options: {},
         },
-    },
+        {
+            loader: "resolve-url-loader",
+
+            // Required if you use resolve-url-loader 3.0+
+            options: {
+                root: "",
+            }
+        },
+        {
+            loader: 'sass-loader',
+            options: {
+                sourceMap: true,
+                implementation: sass,
+                sassOptions: {
+                    functions: dartSassRails({
+                        assetRootPath: path.join(railsRoot, 'app', 'assets'),
+                        imagesPath: '/images',
+                        fontsPath: '/fonts',
+                    }),
+                    includePaths: [path.join(railsRoot, 'app', 'assets', 'stylesheets')],
+                },
+            },
+        }
+    ]
 }
 ```
 
-### Inspired by
+### See also
 
-This library is highly influenced by [node-sass-asset-functions](https://github.com/fetch/node-sass-asset-functions). If you are using node-sass, use that instead.
+- [node-sass-asset-functions](https://github.com/fetch/node-sass-asset-functions): dart-sass-rails is inspired by this lib. If you are using node-sass, use that instead.
+- [resolve-url-loader](https://github.com/bholloway/resolve-url-loader): should be used alongside with dart-sass-rails. Currently dart-sass-rails emits full file paths for `url()`, and resolve-url-loader transforms to proper urls.
