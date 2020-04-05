@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dartSassRails no diffs are present 1`] = `
+Array [
+  "@font-face {
+  font-family: \\"empty\\";
+  src: url(/bundles/empty.31d6cfe0d16ae931b73c59d7e0c089c0.woff) format(\\"woff\\");
+}
+.root {
+  background-image: url(/bundles/icon.559b593e7c4663ae8ce9fe0eee42f553.png);
+  width: 100%;
+  height: 100%;
+}
+.root .child {
+  background-image: url(/bundles/icon2.559b593e7c4663ae8ce9fe0eee42f553.png);
+}
+",
+  "@font-face {
+  font-family: \\"empty\\";
+  src: url(/bundles/empty.31d6cfe0d16ae931b73c59d7e0c089c0.woff) format(\\"woff\\");
+}
+.root {
+  background-image: url(/bundles/icon.559b593e7c4663ae8ce9fe0eee42f553.png);
+  width: 100%;
+  height: 100%;
+}
+.root .child {
+  background-image: url(/bundles/icon2.559b593e7c4663ae8ce9fe0eee42f553.png);
+}
+
+.app {
+  font-family: \\"example\\";
+}
+",
+]
+`;

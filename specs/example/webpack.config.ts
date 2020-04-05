@@ -47,7 +47,7 @@ const sassRule = {
     {
       loader: "resolve-url-loader",
       options: {
-        root: "/",
+        root: "",
       },
     },
     {
@@ -88,14 +88,14 @@ const typescriptRule = {
 };
 
 const plugins = [
-  new FixStyleOnlyEntriesPlugin({
-    extensions: [".scss"],
-  }),
   new ManifestPlugin({
     fileName: "manifest.json",
     publicPath,
     writeToFileEmit: true,
     seed: {},
+  }),
+  new FixStyleOnlyEntriesPlugin({
+    extensions: [".scss"],
   }),
   new MiniCssExtractPlugin({
     filename: "[name].[contenthash].css",
