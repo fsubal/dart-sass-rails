@@ -1,0 +1,10 @@
+@font-face {
+  font-family: "empty";
+  src: font-url("empty.woff") format("woff");
+}
+
+.root {
+  background-image: image-url("icon.png");
+  width: 100%;
+  height: 100%;
+}
