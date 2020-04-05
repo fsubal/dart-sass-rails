@@ -1,7 +1,8 @@
 import sass from "sass";
 import path from "path";
-import dartSassRails from "../../src";
+import dartSassRails from "../../src/index";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import webpack from "webpack";
 
 const publicPath = "/bundles/";
 
@@ -9,6 +10,13 @@ const railsRoot = __dirname;
 const frontendPath = path.join(railsRoot, "frontend");
 const assetsPath = path.join(railsRoot, "app", "assets");
 const stylesheetsPath = path.join(assetsPath, "stylesheets");
+
+const output = {
+  filename: "[name].[contenthash].js",
+  path: path.resolve(railsRoot, "public", "bundles"),
+  chunkFilename: "[name].[contenthash].js",
+  publicPath,
+};
 
 const fileRule = {
   test: /\.(jpg|jpeg|png|gif|svg|eot|ttf|woff|woff2)$/i,
@@ -73,17 +81,27 @@ const typescriptRule = {
   ],
 };
 
+const plugins = [
+  new MiniCssExtractPlugin({
+    filename: "[name].[contenthash].css",
+  }),
+];
+
 /**
  * Using multi-compiler mode
  *
  * @see https://github.com/webpack/webpack/tree/c38e226717a6648a1faafd8dbb46d1fba1396a5d/examples/multi-compiler
  */
-export default [
+export default (
+  mode: webpack.Configuration["mode"]
+): webpack.Configuration[] => [
   /**
    * compiler for /frontend
    */
   {
     name: "frontend",
+    mode,
+    output,
     entry: {
       index: path.join(frontendPath, "index.ts"),
     },
@@ -94,6 +112,7 @@ export default [
     module: {
       rules: [fileRule, sassRule, typescriptRule],
     },
+    plugins,
   },
 
   /**
@@ -101,6 +120,8 @@ export default [
    */
   {
     name: "assets",
+    mode,
+    output,
     entry: {
       application: path.join(stylesheetsPath, "application.scss"),
     },
@@ -111,5 +132,6 @@ export default [
     module: {
       rules: [fileRule, sassRule],
     },
+    plugins,
   },
 ];
