@@ -44,7 +44,12 @@ const sassRule = {
       loader: "css-loader",
       options: {},
     },
-    { loader: "resolve-url-loader" },
+    {
+      loader: "resolve-url-loader",
+      options: {
+        root: "/",
+      },
+    },
     {
       loader: "sass-loader",
       options: {
