@@ -3,6 +3,10 @@ import path from "path";
 import dartSassRails from "../../src/index";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
+import ManifestPlugin from "webpack-manifest-plugin";
+
+// @ts-ignore
+import FixStyleOnlyEntriesPlugin from "webpack-fix-style-only-entries";
 
 const publicPath = "/bundles/";
 
@@ -38,19 +42,16 @@ const sassRule = {
     MiniCssExtractPlugin.loader,
     {
       loader: "css-loader",
-      options: {
-        modules: {
-          localIdentName: "[local]--[hash:base64:6]",
-        },
-      },
+      options: {},
     },
+    { loader: "resolve-url-loader" },
     {
       loader: "sass-loader",
       options: {
         sourceMap: true,
         implementation: sass,
         sassOptions: {
-          sourceComments: false,
+          sourceComments: true,
           functions: dartSassRails({
             assetRootPath: assetsPath,
             imagesPath: "/images",
@@ -82,6 +83,15 @@ const typescriptRule = {
 };
 
 const plugins = [
+  new FixStyleOnlyEntriesPlugin({
+    extensions: [".scss"],
+  }),
+  new ManifestPlugin({
+    fileName: "manifest.json",
+    publicPath,
+    writeToFileEmit: true,
+    seed: {},
+  }),
   new MiniCssExtractPlugin({
     filename: "[name].[contenthash].css",
   }),

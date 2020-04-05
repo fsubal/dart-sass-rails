@@ -33,6 +33,7 @@
     "@types/mini-css-extract-plugin": "^0.9.1",
     "@types/sass": "^1.16.0",
     "@types/webpack": "^4.41.10",
+    "@types/webpack-manifest-plugin": "^2.1.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "bili": "^4.9.0",
@@ -43,6 +44,7 @@
     "jest-cli": "^25.2.7",
     "mini-css-extract-plugin": "^0.9.0",
     "prettier": "^2.0.2",
+    "resolve-url-loader": "2.3.1",
     "rollup-plugin-typescript2": "^0.27.0",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
@@ -51,7 +53,9 @@
     "ts-node": "^8.8.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-fix-style-only-entries": "^0.4.0",
+    "webpack-manifest-plugin": "^2.2.0"
   },
   "peerDependencies": {
     "sass": "*"
