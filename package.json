@@ -10,17 +10,33 @@
     "type": "git",
     "url": "https://github.com/fsubal/dart-sass-rails"
   },
+  "jest": {
+    "rootDir": "./src",
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.spec.{ts,tsx}"
+    ],
+    "moduleFileExtensions": [
+      "ts"
+    ]
+  },
   "author": "fsubal <fsubal1102@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^25.2.1",
     "@types/sass": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "bili": "^4.9.0",
     "eslint": "^6.8.0",
+    "jest": "^25.2.7",
+    "jest-cli": "^25.2.7",
     "prettier": "^2.0.2",
     "rollup-plugin-typescript2": "^0.27.0",
     "sass": "^1.26.3",
+    "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
