@@ -1,7 +1,7 @@
 import sass from "sass";
 import AssetHelper, { Option } from "./AssetHelper";
 
-const dartSassRails = (options: Option) => {
+export const dartSassRails = (options: Option) => {
   const h = new AssetHelper(options);
 
   return {
@@ -67,5 +67,3 @@ const dartSassRails = (options: Option) => {
     },
   };
 };
-
-export default dartSassRails;

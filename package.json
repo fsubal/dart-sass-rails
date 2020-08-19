@@ -1,7 +1,7 @@
 {
   "name": "dart-sass-rails",
   "version": "0.3.0",
-  "main": "index.js",
+  "main": "dist/index.min.js",
   "types": "dist/src/index.d.ts",
   "files": [
     "dist"
