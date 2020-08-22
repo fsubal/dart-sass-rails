@@ -12,7 +12,7 @@ Pass it to sass-loader in webpack, or dart-sass option.
 
 ```js
 import sass from 'sass';
-import dartSassRails from 'dart-sass-rails';
+import { dartSassRails } from 'dart-sass-rails';
 
 {
     test: /\.(scss|sass|css)$/i,
